@@ -23,20 +23,17 @@ class CustomTableViewCell: UITableViewCell {
     private let personImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "person")
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 30
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
         return imageView
     }()
     
     private let countryImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(systemName: "person")
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = 11
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -44,7 +41,6 @@ class CustomTableViewCell: UITableViewCell {
     private let name: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.text = "Serikzhan"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -52,7 +48,6 @@ class CustomTableViewCell: UITableViewCell {
     private let profession: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        label.text = "Serikzhan"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -87,84 +82,49 @@ class CustomTableViewCell: UITableViewCell {
     // MARK: - Setup
     
     private func setupHierarchy() {
-        stack.addArrangedSubview(name)
-        stack.addArrangedSubview(profession)
+        contentView.addSubview(imageContainer)
+        contentView.addSubview(stack)
+        
         imageContainer.addSubview(personImage)
         imageContainer.addSubview(countryImage)
-        contentView.addSubview(stack)
-        contentView.addSubview(imageContainer)
+        
+        stack.addArrangedSubview(name)
+        stack.addArrangedSubview(profession)
     }
     
     private func setupLayout() {
+        // imagecontainer
         NSLayoutConstraint.activate([
-            
             imageContainer.topAnchor.constraint(equalTo: contentView.topAnchor),
-            imageContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            
-            personImage.topAnchor.constraint(equalTo: imageContainer.topAnchor),
-            personImage.leftAnchor.constraint(equalTo: imageContainer.leftAnchor),
-            
-            countryImage.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor),
-            
-            
-            //imageContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10),
-            
-            stack.leftAnchor.constraint(equalTo: imageContainer.centerXAnchor)
-            
-            
-            //            personImage.topAnchor.constraint(equalTo: imageContainer.topAnchor),
-            //            personImage.rightAnchor.constraint(equalTo: imageContainer.rightAnchor),
-            //            personImage.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor),
-            //            personImage.leftAnchor.constraint(equalTo: imageContainer.leftAnchor),
-            //            personImage.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor),
-            //
-            //            countryImage.rightAnchor.constraint(equalTo: imageContainer.rightAnchor),
-            //            countryImage.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor),
-            //            countryImage.heightAnchor.constraint(equalToConstant: 20),
-            //            countryImage.widthAnchor.constraint(equalToConstant: 20),
-            //
-            //            imageContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            //            imageContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
-            //            imageContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            //            imageContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            //            imageContainer.widthAnchor.constraint(equalToConstant: 60),
-            //            imageContainer.heightAnchor.constraint(equalToConstant: 60),
-            //
-            //            stack.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor),
-            //            stack.leftAnchor.constraint(equalTo: imageContainer.rightAnchor, constant: 20)
-            
-            
-            
-            //            personImage.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: -3),
-            //            personImage.leftAnchor.constraint(equalTo: imageContainer.leftAnchor, constant: 3),
-            //          //  personImage.rightAnchor.constraint(equalTo: imageContainer.rightAnchor),
-            //           // personImage.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor),
-            //
-            //            countryImage.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 20),
-            //            countryImage.leftAnchor.constraint(equalTo: imageContainer.leftAnchor, constant: 3),
-            //            //countryImage.rightAnchor.constraint(equalTo: imageContainer.rightAnchor),
-            //            //countryImage.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor),
-            //            countryImage.widthAnchor.constraint(equalToConstant: 20),
-            //            countryImage.heightAnchor.constraint(equalToConstant: 20),
-            //
-            //            imageContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            //            imageContainer.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
-            //            //imageContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10),
-            //            imageContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            //            imageContainer.widthAnchor.constraint(equalToConstant: 60),
-            //            imageContainer.heightAnchor.constraint(equalToConstant: 60),
-            //
-            //            stack.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor),
-            //            stack.leftAnchor.constraint(equalTo: imageContainer.rightAnchor, constant: 20)
-            
-            
+            imageContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            imageContainer.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            imageContainer.heightAnchor.constraint(equalTo: contentView.heightAnchor)
         ])
-    }
-    
-    // MARK: - Reuse
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.accessoryType = .none
-        self.person = nil
+        // stack
+        NSLayoutConstraint.activate([
+            stack.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stack.leadingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: 100),
+            stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        // personImage
+        NSLayoutConstraint.activate([
+            personImage.topAnchor.constraint(equalTo: imageContainer.topAnchor),
+            personImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: -470),
+            personImage.heightAnchor.constraint(equalToConstant: 60),
+        ])
+        // countryPerson
+        NSLayoutConstraint.activate([
+            countryImage.topAnchor.constraint(equalTo: personImage.bottomAnchor, constant: 60),
+            countryImage.leadingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: 60),
+            countryImage.heightAnchor.constraint(equalToConstant: 25),
+            countryImage.widthAnchor.constraint(equalToConstant: 25)
+        ])
+        
+       //  MARK: - Reuse
+             func prepareForReuse() {
+                super.prepareForReuse()
+                self.accessoryType = .none
+                self.person = nil
+            }
     }
 }
