@@ -25,6 +25,7 @@ class CustomTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 30
+        imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -54,6 +55,7 @@ class CustomTableViewCell: UITableViewCell {
     
     private let imageContainer: UIView = {
         let container = UIView()
+        
         container.translatesAutoresizingMaskIntoConstraints = false
         return container
     }()
@@ -111,10 +113,11 @@ class CustomTableViewCell: UITableViewCell {
             personImage.topAnchor.constraint(equalTo: imageContainer.topAnchor),
             personImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: -470),
             personImage.heightAnchor.constraint(equalToConstant: 60),
+            
         ])
         // countryPerson
         NSLayoutConstraint.activate([
-            countryImage.topAnchor.constraint(equalTo: personImage.bottomAnchor, constant: 60),
+            countryImage.topAnchor.constraint(equalTo: personImage.bottomAnchor, constant: -10),
             countryImage.leadingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: 60),
             countryImage.heightAnchor.constraint(equalToConstant: 25),
             countryImage.widthAnchor.constraint(equalToConstant: 25)
