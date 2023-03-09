@@ -18,6 +18,7 @@ class BestTeamViewController: UIViewController {
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     

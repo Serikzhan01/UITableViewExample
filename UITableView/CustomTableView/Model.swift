@@ -28,22 +28,22 @@ struct Person: Hashable {
 extension Person {
     static var persons: [[Person]] = [
         // Seos
-        [Person(photoImage: UIImage(named: "person8")!, name: "Nataly Philips", profession: .seo, countryImage: UIImage(named: "ac")!)],
+        [Person(photoImage: UIImage(named: "person1")!, name: "Philips Nataly", profession: .seo, countryImage: UIImage(named: "1")!)],
         // Product Managers
-        [Person(photoImage: UIImage(named: "person9")!, name: "Serj Estimoza", profession: .product, countryImage: UIImage(named: "ag")!)],
+        [Person(photoImage: UIImage(named: "person2")!, name: "Serj Estimoza", profession: .product, countryImage: UIImage(named: "2")!)],
         // Project Managers
-        [Person(photoImage: UIImage(named: "person1")!, name: "Jack Whilde", profession: .project, countryImage: UIImage(named: "ad")!)],
+        [Person(photoImage: UIImage(named: "person3")!, name: "Jack Whilde", profession: .project, countryImage: UIImage(named: "3")!)],
         // Backend Developer
-        [Person(photoImage: UIImage(named: "person7")!, name: "Lisa Coulman", profession: .backend, countryImage: UIImage(named: "ae")!)],
+        [Person(photoImage: UIImage(named: "person4")!, name: "Lisa Coulman", profession: .backend, countryImage: UIImage(named: "4")!)],
         // iOS Developers
-        [Person(photoImage: UIImage(named: "person10")!, name: "Jane Foster", profession: .iOS, countryImage: UIImage(named: "ae")!),
-        Person(photoImage: UIImage(named: "person2")!, name: "Anny Clark", profession: .iOS, countryImage: UIImage(named: "af")!)],
+        [Person(photoImage: UIImage(named: "person5")!, name: "Jane Foster", profession: .iOS, countryImage: UIImage(named: "5")!),
+        Person(photoImage: UIImage(named: "person6")!, name: "Anny Clark", profession: .iOS, countryImage: UIImage(named: "6")!)],
         // Designers
-        [Person(photoImage: UIImage(named: "person6")!, name: "Peter Krasinsky", profession: .designer, countryImage: UIImage(named: "af")!),
-        Person(photoImage: UIImage(named: "person4")!, name: "Loren Ipsum", profession: .designer, countryImage: UIImage(named: "ai")!)],
+        [Person(photoImage: UIImage(named: "person7")!, name: "Peter Krasinsky", profession: .designer, countryImage: UIImage(named: "7")!),
+        Person(photoImage: UIImage(named: "person8")!, name: "Loren Ipsum", profession: .designer, countryImage: UIImage(named: "8")!)],
         // Android Developers
-        [Person(photoImage: UIImage(named: "person5")!, name: "Mathew Smith", profession: .android, countryImage: UIImage(named: "al")!)],
+        [Person(photoImage: UIImage(named: "person9")!, name: "Mathew Smith", profession: .android, countryImage: UIImage(named: "9")!)],
         // Frontend Developers
-        [Person(photoImage: UIImage(named: "person3")!, name: "Stacy Cruze", profession: .frontend, countryImage: UIImage(named: "ag")!)]
+        [Person(photoImage: UIImage(named: "person10")!, name: "Stacy Cruze", profession: .frontend, countryImage: UIImage(named: "10")!)]
     ]
 }
