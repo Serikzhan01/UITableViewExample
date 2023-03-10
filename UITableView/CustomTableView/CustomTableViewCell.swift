@@ -110,24 +110,27 @@ class CustomTableViewCell: UITableViewCell {
         ])
         // personImage
         NSLayoutConstraint.activate([
-            personImage.topAnchor.constraint(equalTo: imageContainer.topAnchor),
-            personImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: -470),
+            personImage.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: 10),
+            personImage.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor),
+            personImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor,
+                                                 constant: 10),
             personImage.heightAnchor.constraint(equalToConstant: 60),
-            
+            personImage.widthAnchor.constraint(equalToConstant: 60),
         ])
         // countryPerson
         NSLayoutConstraint.activate([
-            countryImage.topAnchor.constraint(equalTo: personImage.bottomAnchor, constant: -10),
-            countryImage.leadingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: 60),
+            countryImage.topAnchor.constraint(equalTo: personImage.bottomAnchor, constant: -20),
+            countryImage.leadingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: 50),
             countryImage.heightAnchor.constraint(equalToConstant: 25),
             countryImage.widthAnchor.constraint(equalToConstant: 25)
         ])
         
-       //  MARK: - Reuse
-             func prepareForReuse() {
-                super.prepareForReuse()
-                self.accessoryType = .none
-                self.person = nil
-            }
     }
+    
+//    //  MARK: - Reuse
+//    func prepareForReuse() {
+//        super.prepareForReuse()
+//        self.accessoryType = .none
+//        self.person = nil
+//    }
 }
